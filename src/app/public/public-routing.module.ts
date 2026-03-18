@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: 'service-installation', component: InstallationComponent},
       { path: 'service-advisory', component: SolaradvisoryComponent},
       { path: 'service-o-m', component: SolarOandmComponent },
-      { path: 'service-monetring', component: SolarMonetringComponent},
+      { path: 'service-monitoring', component: SolarMonetringComponent},
       { path: 'service-software', component: SolarSoftwareComponent}
 
     ]

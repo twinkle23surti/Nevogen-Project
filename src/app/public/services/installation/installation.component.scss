@@ -1,0 +1,63 @@
+/* News-page style match – already perfect for mobile/desktop scaling */
+.si-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .si-hero {
+    height: 85svh;
+  }
+}
+
+.si-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/solar-installation-hero.jpg') center/cover no-repeat;
+}
+
+.si-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.si-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5%;
+  padding-bottom: 80px;
+  color: white;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 0 6% 10% 6%;
+    text-align: center;
+  }
+}
+
+.si-hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+  line-height: 1.08;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.si-hero-subtitle {
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  line-height: 1.65;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #f3f4f6;
+  max-width: 720px;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+}
