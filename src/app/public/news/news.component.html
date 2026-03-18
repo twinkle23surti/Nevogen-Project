@@ -1,0 +1,194 @@
+<section class="news-hero">
+  <!-- Background Image -->
+  <div class="news-hero-bg"></div>
+
+  <!-- Dark Overlay -->
+  <div class="news-hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="news-hero-content">
+    <div class="max-w-4xl">
+      <h1 class="news-hero-title">News & Updates</h1>
+
+      <p class="news-hero-subtitle">
+        Stay informed with Nevogen’s latest renewable energy projects,
+        innovations, and company milestones.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS SECTION -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Section Heading -->
+
+    <div
+      class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8 lg:gap-6"
+    >
+      <!-- Left: Heading -->
+      <div class="text-left max-w-2xl">
+        <span
+          class="text-sm font-semibold text-[#31AF36] uppercase tracking-wider"
+        >
+          NEWS
+        </span>
+        <h2 class="text-[32px] md:text-[40px] font-bold text-black mt-2">
+          Explore Our Latest Stories
+        </h2>
+        <p class="text-gray-600 mt-3">
+          Discover updates about our solar projects, events, partnerships and
+          industry insights.
+        </p>
+      </div>
+
+      <!-- Right: Filters -->
+      <div class="flex flex-wrap gap-3 justify-start lg:justify-end">
+        <!-- Category -->
+        <select
+          [(ngModel)]="selectedCategory"
+          (change)="filterNews()"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[160px]"
+        >
+          <option value="All">All Categories</option>
+          <option value="Projects">Projects</option>
+          <option value="Events">Events</option>
+          <option value="Awards">Awards</option>
+        </select>
+
+        <!-- Year -->
+        <select
+          [(ngModel)]="selectedYear"
+          (change)="filterNews()"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[140px]"
+        >
+          <option value="All">All Years</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+        </select>
+
+        <!-- Month -->
+        <select
+          [(ngModel)]="selectedMonth"
+          (change)="filterNews()"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[160px]"
+        >
+          <option value="All">All Months</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- NEWS GRID -->
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div
+        *ngFor="let news of paginatedNews"
+        class="group cursor-pointer transition duration-300 p-4 rounded-xl bg-white shadow-md hover:shadow-lg hover:border hover:border-[#2D394B]"
+      >
+        <!-- IMAGE -->
+        <div class="relative overflow-hidden">
+          <img
+            [src]="news.image"
+            class="w-full h-[240px] object-cover transition duration-500 group-hover:scale-105"
+          />
+
+          <!-- CATEGORY TAG -->
+          <span
+            class="absolute top-3 left-3 bg-white/90 border border-gray-300 text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full"
+          >
+            {{ news.category }}
+          </span>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="mt-4">
+          <!-- DATE -->
+          <p class="text-sm text-gray-500 mb-2">
+            {{ news.date | date: "MMM d, y" }}
+          </p>
+
+          <!-- TITLE -->
+          <h3 class="text-xl font-semibold text-[#2D394B] leading-snug">
+            {{ news.title }}
+          </h3>
+
+          <!-- DESCRIPTION -->
+          <p class="text-gray-600 mt-3 text-[14px] leading-relaxed">
+            {{ news.description }}
+          </p>
+
+          <!-- READ MORE -->
+          <button
+            class="mt-4 font-semibold text-[#2D394B] flex items-center gap-2 transition group-hover:gap-3 group-hover:text-[#31AF36]"
+          >
+            Read More →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="filteredNews.length > 0"
+      class="flex justify-center items-center gap-2 mt-16"
+    >
+      <!-- PREVIOUS -->
+
+      <button
+        (click)="goToPage(currentPage - 1)"
+        [disabled]="currentPage === 1"
+        class="px-4 py-2 border rounded-md text-sm disabled:opacity-40"
+      >
+        Previous
+      </button>
+
+      <!-- PAGE NUMBERS -->
+
+      <ng-container *ngFor="let page of getVisiblePages()">
+        <span *ngIf="page === -1" class="px-2 text-gray-500"> ... </span>
+
+        <button
+          *ngIf="page !== -1"
+          (click)="goToPage(page)"
+          class="px-4 py-2 border rounded-md text-sm transition"
+          [ngClass]="{
+            'bg-[#31AF36] text-white border-[#31AF36]': currentPage === page,
+            'bg-white text-gray-700 hover:border-[#31AF36]':
+              currentPage !== page,
+          }"
+        >
+          {{ page }}
+        </button>
+      </ng-container>
+
+      <!-- NEXT -->
+
+      <button
+        (click)="goToPage(currentPage + 1)"
+        [disabled]="currentPage === totalPages"
+        class="px-4 py-2 border rounded-md text-sm disabled:opacity-40"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- NO DATA -->
+
+    <div *ngIf="filteredNews.length === 0" class="text-center py-20">
+      <p class="text-gray-500 text-lg">
+        No news available for selected filters.
+      </p>
+    </div>
+  </div>
+</section>

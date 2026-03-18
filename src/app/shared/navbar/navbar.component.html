@@ -1,0 +1,305 @@
+<header
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+  [ngClass]="
+    isScrolled
+      ? 'bg-white shadow-md border-b border-gray-200 py-4'
+      : 'bg-transparent py-6'
+  "
+>
+  <div
+    class="max-w-screen-2xl mx-auto px-6 lg:px-12 flex items-center justify-between"
+  >
+    <!-- LOGO -->
+    <a
+      routerLink="/"
+      class="text-2xl md:text-3xl lg:text-4xl font-black tracking-wider transition"
+    >
+      <span [ngClass]="isScrolled ? 'text-black' : 'text-white'">NEVO</span
+      ><span [ngClass]="isScrolled ? 'text-yellow-500' : 'text-white'"
+        >GEN</span
+      >
+    </a>
+
+    <!-- DESKTOP MENU -->
+    <nav
+      class="hidden lg:flex items-center gap-10 xl:gap-14 text-[15px] xl:text-[16px] font-semibold"
+    >
+      <a
+        routerLink="/"
+        routerLinkActive="text-secondary border-b-2 border-secondary"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [ngClass]="navText"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="text-secondary border-b-2 border-secondary"
+        [ngClass]="navText"
+      >
+        About
+      </a>
+      <div class="relative group">
+        <a
+          routerLink="/services"
+          class="flex items-center gap-1"
+          [ngClass]="navText"
+        >
+          Services
+          <span class="text-xs">▼</span>
+        </a>
+
+        <div
+          class="absolute left-0 top-full mt-2 min-w-[210px] bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        >
+          <a
+            routerLink="/services/service-installation"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Installation
+          </a>
+
+          <a
+            routerLink="/services/service-advisory"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Solar Advisory
+          </a>
+
+          <a
+            routerLink="/services/service-o-m"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Solar O&M
+          </a>
+
+          <a
+            routerLink="/services/service-monitoring"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Solar Monitoring
+          </a>
+
+          <a
+            routerLink="/services/service-software"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Solar Software
+          </a>
+        </div>
+      </div>
+      <div class="relative group">
+        <a
+          routerLink="/products"
+          class="flex items-center gap-1"
+          [ngClass]="navText"
+        >
+          Products
+          <span class="text-xs">▼</span>
+        </a>
+
+        <div
+          class="absolute left-0 top-full mt-2 min-w-[210px] bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        >
+          <a
+            routerLink="/products/product-standard"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Nevogen Standard
+          </a>
+
+          <a
+            routerLink="/products/product-enterprise"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Nevogen Enterprise
+          </a>
+
+          <a
+            routerLink="/products/product-royal"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Nevogen Royal
+          </a>
+
+          <a
+            routerLink="/products/product-supreme"
+            class="block px-5 py-3 text-base text-gray-700 hover:text-secondary hover:bg-gray-50"
+          >
+            Nevogen Supreme
+          </a>
+        </div>
+      </div>
+
+      <a
+        routerLink="/news"
+        routerLinkActive="text-secondary border-b-2 border-secondary"
+        [ngClass]="navText"
+      >
+        News
+      </a>
+      <a
+        routerLink="/careers"
+        routerLinkActive="text-secondary border-b-2 border-secondary"
+        [ngClass]="navText"
+      >
+        Careers
+      </a>
+      <a
+        routerLink="/contact"
+        routerLinkActive="text-secondary border-b-2 border-secondary"
+        [ngClass]="navText"
+      >
+        Contact
+      </a>
+    </nav>
+
+    <!-- MOBILE BUTTON -->
+    <button
+      class="lg:hidden text-3xl transition"
+      [ngClass]="isScrolled ? 'text-black' : 'text-white'"
+      (click)="toggleSidebar()"
+    >
+      ☰
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div
+  *ngIf="isSidebarOpen"
+  class="fixed inset-0 bg-black/50 z-40"
+  (click)="toggleSidebar()"
+></div>
+
+<!-- MOBILE MENU (sirf yeh part change kiya hai) -->
+<div
+  class="fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-500 shadow-2xl overflow-y-auto text-black"
+  [ngClass]="isSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+>
+  <div class="p-6 border-b flex justify-between items-center">
+    <span class="text-3xl font-black text-black">NEVOGEN</span>
+    <button class="text-3xl" (click)="toggleSidebar()">✕</button>
+  </div>
+
+  <nav class="flex flex-col gap-6 p-6 text-lg font-medium">
+    <a
+      routerLink="/"
+      (click)="toggleSidebar()"
+      class="hover:text-secondary transition-colors duration-200"
+      >Home</a
+    >
+    <a
+      routerLink="/about"
+      (click)="toggleSidebar()"
+      class="hover:text-secondary transition-colors duration-200"
+      >About</a
+    >
+
+    <!-- SERVICES MOBILE - dropdown toggle -->
+    <div>
+      <button
+        class="font-semibold text-left w-full flex justify-between items-center hover:text-secondary transition-colors duration-200"
+        (click)="toggleServices()"
+      >
+        Services
+        <span class="text-xl">{{ openServices ? "▲" : "▼" }}</span>
+      </button>
+      <div
+        *ngIf="openServices"
+        class="pl-5 mt-3 flex flex-col gap-3 text-gray-700"
+      >
+        <a
+          routerLink="/services/service-installation"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Installation</a
+        >
+        <a
+          routerLink="/services/service-advisory"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Solar Advisory</a
+        >
+        <a
+          routerLink="/services/service-o-m"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Solar O&M</a
+        >
+        <a
+          routerLink="/services/service-monitoring"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Solar Monitoring</a
+        >
+        <a
+          routerLink="/services/service-software"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Solar Software</a
+        >
+      </div>
+    </div>
+
+    <!-- PRODUCTS MOBILE - dropdown toggle -->
+    <div>
+      <button
+        class="font-semibold text-left w-full flex justify-between items-center hover:text-secondary transition-colors duration-200"
+        (click)="toggleProducts()"
+      >
+        Products
+        <span class="text-xl">{{ openProducts ? "▲" : "▼" }}</span>
+      </button>
+      <div
+        *ngIf="openProducts"
+        class="pl-5 mt-3 flex flex-col gap-3 text-gray-700"
+      >
+        <a
+          routerLink="/products/product-standard"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Nevogen Standard</a
+        >
+        <a
+          routerLink="/products/product-enterprise"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Nevogen Enterprise</a
+        >
+        <a
+          routerLink="/products/product-royal"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Nevogen Royal</a
+        >
+        <a
+          routerLink="/products/product-supreme"
+          (click)="toggleSidebar()"
+          class="hover:text-secondary transition-colors duration-200"
+          >Nevogen Supreme</a
+        >
+      </div>
+    </div>
+
+    <a
+      routerLink="/news"
+      (click)="toggleSidebar()"
+      class="hover:text-secondary transition-colors duration-200"
+      >News</a
+    >
+    <a
+      routerLink="/careers"
+      (click)="toggleSidebar()"
+      class="hover:text-secondary transition-colors duration-200"
+      >Careers</a
+    >
+    <a
+      routerLink="/contact"
+      (click)="toggleSidebar()"
+      class="hover:text-secondary transition-colors duration-200"
+      >Contact</a
+    >
+  </nav>
+</div>

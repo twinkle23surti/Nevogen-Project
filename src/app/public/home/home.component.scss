@@ -1,0 +1,175 @@
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 85svh; /* 👈 perfect mobile cinematic size */
+  }
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.05);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+   rgba(0,0,0,0.62) 0%,
+    rgba(0,0,0,0.42) 40%,
+    rgba(0,0,0,0.15) 80%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  padding-left: 8%;
+  padding-bottom: 40px;
+
+  color: white;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+}
+.hero-subtitle {
+  color: #ffffff;
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  line-height: 1.6;
+  margin-top: 8px;
+  max-width: 680px;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.clip-path-custom {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+}
+
+.city-dot {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border: 3px solid #31AF36;
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .city-dot {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.city-dot span {
+  color: #31AF36;
+}
+
+.city-dot:hover {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
+  box-shadow: 0 0 0 4px rgba(49, 175, 54, 0.2), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.city-dot:hover span {
+  color: white;
+}
+
+.city-dot:hover div {
+  color: white;
+}
+
+.city-dot.active {
+  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
+  transform: scale(1.25);
+  box-shadow: 0 0 0 6px rgba(49, 175, 54, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.city-dot.active span {
+  color: white;
+}
+
+.city-dot.active div {
+  color: white;
+}
+
+/* Animations */
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.total-capacity-dot {
+  width: 5rem;
+  height: 5rem;
+
+  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
+  border-radius: 9999px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  box-shadow: 0 0 0 4px rgba(49, 175, 54, 0.25),
+              0 15px 25px rgba(0,0,0,0.15);
+
+  z-index: 30;
+}
+
+/* same responsive size like city */
+@media (min-width: 768px) {
+  .total-capacity-dot {
+    width: 6rem;
+    height: 6rem;
+  }
+}
