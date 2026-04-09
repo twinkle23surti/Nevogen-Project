@@ -14,7 +14,7 @@ export class NavbarComponent {
 
   get navText() {
     return this.isScrolled
-      ? 'text-black hover:text-secondary transition'
+      ? 'text-gray-700 hover:text-secondary transition'
       : 'text-white hover:text-secondary transition';
   }
 

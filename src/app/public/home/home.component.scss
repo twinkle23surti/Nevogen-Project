@@ -63,113 +63,76 @@
 
 .clip-path-custom {
   clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+}.arc-svg-wrapper {
+  width: 100%;
+  max-width: 430px;
+
+  @media (max-width: 640px) {
+    max-width: 320px;
+  }
 }
 
-.city-dot {
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
-  background-color: white;
-  border: 3px solid #31AF36;
-  border-radius: 9999px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.arc-main-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.city-img-transition {
+  transition: opacity 0.5s ease;
+}
+
+// ❌ Removed transform from <g> — causes icon shifting
+.city-arc-dot {
   cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
 
-@media (min-width: 768px) {
-  .city-dot {
-    width: 6rem;
-    height: 6rem;
+  .arc-dot-circle {
+    transition: filter 0.3s ease;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    // ❌ NO transform here — scale shifts the whole group
+  }
+
+  &:hover .arc-dot-circle {
+    filter: drop-shadow(0 0 14px rgba(49, 175, 54, 0.75));
+    // ✅ Only glow, no scale/transform
   }
 }
 
-.city-dot span {
-  color: #31AF36;
+.pulse-ring {
+  animation: pulseAnim 1.8s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.city-dot:hover {
-  transform: scale(1.2);
-  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
-  box-shadow: 0 0 0 4px rgba(49, 175, 54, 0.2), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+@keyframes pulseAnim {
+  0%   { opacity: 0.5; transform: scale(0.9); }
+  50%  { opacity: 0.2; transform: scale(1.2); }
+  100% { opacity: 0;   transform: scale(1.4); }
 }
 
-.city-dot:hover span {
-  color: white;
+.content-fade {
+  animation: contentFade 0.4s ease;
 }
 
-.city-dot:hover div {
-  color: white;
+@keyframes contentFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.city-dot.active {
-  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
-  transform: scale(1.25);
-  box-shadow: 0 0 0 6px rgba(49, 175, 54, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+.cut-shape {
+  border-radius: 30px 30px 80px 30px;
 }
-
-.city-dot.active span {
-  color: white;
-}
-
-.city-dot.active div {
-  color: white;
-}
-
-/* Animations */
-.animate-spin-slow {
-  animation: spin 20s linear infinite;
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 15s linear infinite;
-}
-
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-@keyframes spin-reverse {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-.total-capacity-dot {
-  width: 5rem;
-  height: 5rem;
-
-  background: linear-gradient(135deg, #31AF36 0%, #2D394B 100%);
-  border-radius: 9999px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-
-  box-shadow: 0 0 0 4px rgba(49, 175, 54, 0.25),
-              0 15px 25px rgba(0,0,0,0.15);
-
-  z-index: 30;
+/* Default stop */
+.spin-ring {
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
 }
 
-/* same responsive size like city */
-@media (min-width: 768px) {
-  .total-capacity-dot {
-    width: 6rem;
-    height: 6rem;
-  }
+/* On hover start animation */
+.group:hover .spin-ring {
+  animation-play-state: running;
 }
