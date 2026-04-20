@@ -28,7 +28,7 @@
           class="rounded-3xl overflow-hidden shadow-2xl h-[380px] md:h-[440px] lg:h-[480px]"
         >
           <img
-            src="assets/solar-infra.jpg"
+            src="assets/solar-advisory.jpg"
             class="w-full h-full object-cover"
             alt="Solar and Wind Farm at Sunset"
           />
@@ -284,60 +284,67 @@
     </div>
   </div>
 </section>
-<!-- ═══ HOW WE ENGAGE — PERFECT ALIGN FIX ═══ -->
+<!-- ═══ HOW WE ENGAGE — FINAL PERFECT ALIGN ═══ -->
+<!-- ═════════════════ HOW WE ENGAGE (Perfect Alignment) ═════════════════ -->
 <section class="bg-white py-24">
   <div class="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-    <!-- CHANGE: items-stretch -->
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+      <!-- ========== LEFT COLUMN ========== -->
+      <div class="flex flex-col h-full">
 
-      <!-- LEFT: IMAGE + OVERLAY CARD -->
-      <div class="relative h-full flex">
+        <!-- IMAGE + INFO CARD WRAPPER -->
+        <div class="relative flex-1 flex flex-col justify-center">
 
-        <!-- Glow BG -->
-        <div class="absolute -inset-6 bg-gradient-to-br from-[#e6f4ff] via-[#ccefff] to-[#f0fbff] rounded-3xl blur-2xl"></div>
+          <!-- Big Image -->
+          <div class="flex justify-center">
+            <img
+              src="assets/solar-engage.png"
+              alt="Solar Advisory"
+              class="w-full max-w-[620px] lg:max-w-[700px] xl:max-w-[740px] h-auto object-contain
+                     drop-shadow-[0_35px_90px_rgba(10,61,140,0.28)]"
+            />
+          </div>
 
-        <!-- IMAGE WRAPPER -->
-        <div class="relative w-full h-full flex">
-          <img
-            src="assets/solar-execution.png"
-            alt="Advisory Process"
-            class="w-full h-full object-contain rounded-3xl"
-          />
+          <!-- Info Card - Smaller Height + Less Overlap -->
+          <div class="mt-[-45px] md:mt-[-55px] lg:mt-[-65px] px-4">
+            <div class="bg-white rounded-3xl p-6 shadow-2xl border border-[#00B9E8]/20 relative z-10 max-w-[500px] mx-auto lg:mx-0">
+
+              <h4 class="text-[#0A3D8C] font-bold text-[18px] mb-2.5">
+                Advisory That Drives Decisions
+              </h4>
+
+              <p class="text-gray-600 text-[15px] leading-[1.7]">
+                Structured insights, independent validation, and decision-ready
+                reports — helping you move forward with clarity and confidence.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- OVERLAY CARD -->
-        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-[#00B9E8]/20">
-
-          <h4 class="text-[#0A3D8C] font-bold text-[17px] mb-2">
-            Advisory That Drives Decisions
-          </h4>
-
-          <p class="text-gray-600 text-[15px] leading-[1.7]">
-            Structured insights, independent validation, and decision-ready reports — helping you move forward with clarity and confidence.
-          </p>
-
-        </div>
       </div>
 
-      <!-- RIGHT: STEPS CARDS -->
-      <div class="h-full flex flex-col justify-center">
+      <!-- ========== RIGHT COLUMN ========== -->
+      <div class="flex flex-col h-full">
+        <!-- Header -->
+        <div class="mb-8">
+          <span class="inline-block text-[#00B9E8] font-semibold uppercase tracking-wider text-sm mb-5">
+            How We Engage
+          </span>
+          <h2 class="font-bold text-[#0A3D8C] leading-tight text-[26px] sm:text-[32px] md:text-[38px] lg:text-[42px]">
+            Structured. Fast.<br />Decision-Ready.
+          </h2>
+        </div>
 
-        <span class="inline-block text-[#00B9E8] font-semibold uppercase tracking-wider text-sm mb-5">
-          How We Engage
-        </span>
-
-        <h2 class="font-bold text-[#0A3D8C] leading-tight text-[26px] sm:text-[32px] md:text-[38px] lg:text-[42px] mb-10">
-          Structured. Fast.<br />Decision-Ready.
-        </h2>
-
-        <div class="space-y-5">
-
-          <!-- SAME CARDS (no change needed) -->
+        <!-- Cards Container -->
+        <div class="grid gap-5 flex-1 content-start">
 
           <!-- CARD 1 -->
-          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#dff3ff] to-[#ffffff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#0A3D8C] to-[#00B9E8] text-white text-lg font-bold shrink-0">01</div>
+          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#dff3ff] to-white border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#0A3D8C] to-[#00B9E8] text-white text-lg font-bold shrink-0">
+              01
+            </div>
             <div>
               <h4 class="font-bold text-[#0A3D8C] text-[17px] mb-1">Initial Scoping Call</h4>
               <p class="text-gray-600 text-[15px] leading-[1.7]">
@@ -347,8 +354,10 @@
           </div>
 
           <!-- CARD 2 -->
-          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#ffffff] to-[#d6f4ff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00B9E8] to-[#0A3D8C] text-white text-lg font-bold shrink-0">02</div>
+          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-white to-[#d6f4ff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00B9E8] to-[#0A3D8C] text-white text-lg font-bold shrink-0">
+              02
+            </div>
             <div>
               <h4 class="font-bold text-[#0A3D8C] text-[17px] mb-1">Data & Document Review</h4>
               <p class="text-gray-600 text-[15px] leading-[1.7]">
@@ -358,21 +367,25 @@
           </div>
 
           <!-- CARD 3 -->
-          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#dff3ff] to-[#ffffff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#0A3D8C] to-[#00B9E8] text-white text-lg font-bold shrink-0">03</div>
+          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#dff3ff] to-white border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#0A3D8C] to-[#00B9E8] text-white text-lg font-bold shrink-0">
+              03
+            </div>
             <div>
               <h4 class="font-bold text-[#0A3D8C] text-[17px] mb-1">Independent Analysis</h4>
               <p class="text-gray-600 text-[15px] leading-[1.7]">
-                Our engineering and commercial team conducts independent analysis — yield modelling, risk classification, regulatory mapping, and financial evaluation against realistic benchmarks.
+                Our engineering and commercial team conducts independent analysis — yield modelling, risk classification, regulatory mapping, financial evaluation against realistic benchmarks.
               </p>
             </div>
           </div>
 
           <!-- CARD 4 -->
-          <div class="group flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-[#ffffff] to-[#d6f4ff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00B9E8] to-[#0A3D8C] text-white text-lg font-bold shrink-0">04</div>
+          <div class="group flex gap-4 p-6 rounded-2xl bg-gradient-to-r from-white to-[#d6f4ff] border border-[#00B9E8]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00B9E8] to-[#0A3D8C] text-white text-lg font-bold shrink-0">
+              04
+            </div>
             <div>
-              <h4 class="font-bold text-[#0A3D8C] text-[17px] mb-1">Report & Client Briefing</h4>
+              <h4 class="font-bold text-[#0A3D8C] text-[18px] mb-1">Report & Client Briefing</h4>
               <p class="text-gray-600 text-[15px] leading-[1.7]">
                 Findings are delivered as a structured advisory report — clear, decision-ready, and suitable for use with lenders, boards, or investment committees.
               </p>
@@ -381,102 +394,76 @@
 
         </div>
       </div>
-
     </div>
   </div>
 </section>
-<!-- ═══ SOLAR ADVISORY CTA (MATCHED WITH MONITORING CTA DESIGN) ═══ -->
-<section class="py-20 md:py-28">
+<section class="relative py-8 md:py-10 overflow-hidden">
+  <!-- Light Cyan Gradient -->
   <div
-    class="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20"
-  >
-    <div
-      class="relative overflow-hidden rounded-3xl px-6 sm:px-10 md:px-16 py-12 md:py-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16 bg-gradient-to-br from-[#2D394B] via-[#2D394B] to-[#31AF36]"
-    >
-      <!-- glow -->
-      <div
-        class="absolute -top-20 -right-20 w-[300px] h-[300px] bg-[#31AF36]/30 blur-[100px] rounded-full"
-      ></div>
+    class="absolute inset-0 bg-gradient-to-r from-[#e6f9ff] via-[#d8f3ff] to-[#ccf2ff]"
+  ></div>
 
-      <!-- TEXT -->
-      <div class="relative max-w-xl">
-        <p
-          class="text-sm md:text-base font-semibold tracking-widest uppercase text-[#31AF36] mb-4"
-        >
-          Solar Advisory
-        </p>
+  <!-- Soft Glow -->
+  <div
+    class="absolute top-0 left-0 w-40 h-40 bg-[#00B9E8]/20 blur-3xl rounded-full"
+  ></div>
+  <div
+    class="absolute bottom-0 right-0 w-40 h-40 bg-[#00B9E8]/20 blur-3xl rounded-full"
+  ></div>
 
-        <h2
-          class="font-bold text-white leading-tight text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] mb-4"
-        >
-          Need Unbiased Advice for Your Solar Project?
-        </h2>
+  <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+    <!-- Small Heading -->
+    <h2 class="text-[16px] md:text-[18px] font-semibold text-[#0A3D8C] mb-2">
+      Ready for Solar?
+    </h2>
 
-        <p class="text-white/80 text-base md:text-lg leading-relaxed">
-          From feasibility to performance evaluation, we provide independent
-          advisory so you make the right technical and financial decisions —
-          without vendor bias.
-        </p>
-      </div>
+    <!-- Short Text -->
+    <p class="text-[#0A3D8C]/70 text-[12px] md:text-[13px] mb-4">
+      Get a custom solar solution for your energy needs.
+    </p>
 
-      <!-- BUTTONS -->
-      <div class="relative flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-        <!-- PRIMARY BUTTON -->
-        <a
-          href="/contact"
-          class="relative inline-flex items-center px-8 py-3 text-sm md:text-base font-semibold text-white rounded-full overflow-hidden group transition-all duration-500"
-        >
-          <span class="absolute inset-0 bg-[#31AF36]"></span>
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-2 justify-center">
+      <!-- PRIMARY (THEME BUTTON) -->
+      <a
+        href="/contact"
+        class="relative inline-flex items-center px-5 py-2 text-[12px] font-semibold text-white rounded-full overflow-hidden group transition-all duration-500 active:scale-95"
+      >
+        <!-- Base Gradient -->
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-[#0A3D8C] to-[#00B9E8]"
+        ></span>
+
+        <!-- Hover Reverse Gradient -->
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-[#00B9E8] to-[#0A3D8C] -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
+        ></span>
+
+        <!-- Content -->
+        <span class="relative z-10 flex items-center overflow-hidden">
+          <span
+            class="transition-all duration-300 group-hover:-translate-x-3 group-hover:opacity-0"
+          >
+            →
+          </span>
+
+          <span class="mx-2">Request Quote</span>
 
           <span
-            class="absolute inset-0 bg-gradient-to-r from-[#2D394B] to-[#31AF36] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out"
-          ></span>
-
-          <span class="relative z-10 flex items-center overflow-hidden">
-            <span
-              class="transition-all duration-500 group-hover:-translate-x-4 group-hover:opacity-0"
-            >
-              →
-            </span>
-
-            <span class="mx-2">Request Advisory Discussion</span>
-
-            <span
-              class="opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0"
-            >
-              →
-            </span>
+            class="opacity-0 translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+          >
+            →
           </span>
-        </a>
+        </span>
+      </a>
 
-        <!-- SECONDARY BUTTON -->
-        <a
-          href="/contact"
-          class="relative inline-flex items-center px-8 py-3 text-sm md:text-base font-semibold text-white rounded-full overflow-hidden group transition-all duration-500 border border-white/30"
-        >
-          <span class="absolute inset-0 bg-white/10"></span>
-
-          <span
-            class="absolute inset-0 bg-gradient-to-r from-[#31AF36] to-[#2D394B] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out"
-          ></span>
-
-          <span class="relative z-10 flex items-center overflow-hidden">
-            <span
-              class="transition-all duration-500 group-hover:-translate-x-4 group-hover:opacity-0"
-            >
-              →
-            </span>
-
-            <span class="mx-2">Talk to Expert</span>
-
-            <span
-              class="opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0"
-            >
-              →
-            </span>
-          </span>
-        </a>
-      </div>
+      <!-- Secondary -->
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-4 py-2 text-[11px] font-semibold text-[#0A3D8C] border border-[#0A3D8C]/20 rounded-md hover:bg-white/60 transition-all"
+      >
+        Talk to Expert →
+      </a>
     </div>
   </div>
 </section>

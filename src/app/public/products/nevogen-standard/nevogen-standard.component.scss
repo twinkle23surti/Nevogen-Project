@@ -1,34 +1,36 @@
-/* ═══ HERO BASE (SAME AS CONTACT) ═══ */
+/* ═══ HERO BASE ═══ */
 .ns-hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
 
-/* Mobile cinematic height */
-@media (max-width: 768px) {
-  .ns-hero {
+  @media (max-width: 768px) {
     height: 85svh;
   }
 }
 
-/* Background Image */
+/* Background */
 .ns-hero-bg {
   position: absolute;
   inset: 0;
-  background: url("/assets/standard-hero.jpg") center/cover no-repeat;
+  background: url("/assets/solar-about.jpg") center/cover no-repeat;
 }
 
-/* Overlay (same as contact) */
+/* 🔥 PREMIUM OVERLAY (same family as your other pages) */
 .ns-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    to top,
+    rgba(10, 61, 140, 0.45) 0%,   /* light readable bottom */
+    rgba(10, 61, 140, 0.20) 45%,  /* soft mid */
+    rgba(0, 185, 232, 0.08) 100%  /* very light top */
+  );
   z-index: 1;
 }
 
-/* Content Position (SAME) */
+/* Content */
 .ns-hero-content {
   position: relative;
   z-index: 2;
@@ -38,31 +40,260 @@
   padding: 0 5%;
   padding-bottom: 100px;
   color: white;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 0 6% 10% 6%;
+    text-align: center;
+  }
 }
 
-/* Tag (small addition, disturb nahi karega) */
+/* Tag (cyan theme instead of green) */
 .ns-hero-tag {
   display: inline-block;
-  color: #31AF36;
+  color: #00B9E8;
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* Title — EXACT SAME */
+/* Title */
 .ns-hero-title {
   font-size: clamp(2.1rem, 4.2vw, 3.6rem);
   line-height: 1.08;
   font-weight: 800;
 }
 
-/* Subtitle — EXACT SAME */
+/* Subtitle */
 .ns-hero-subtitle {
   font-size: clamp(1.05rem, 1.5vw, 1.4rem);
   line-height: 1.65;
   margin-top: 16px;
   font-weight: 600;
   color: #f3f4f6;
+  max-width: 720px;
+}
+
+/* ═══ BUTTON ═══ */
+.ns-hero-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+}
+
+/* Base gradient */
+.ns-btn-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0A3D8C, #00B9E8);
+}
+
+/* Hover slide effect */
+.ns-btn-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00B9E8, #0A3D8C);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.ns-hero-btn:hover .ns-btn-hover {
+  transform: translateX(0);
+}
+
+/* Content */
+.ns-btn-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Arrows */
+.ns-btn-arrow-left {
+  transition: all 0.4s;
+}
+
+.ns-btn-arrow-right {
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.4s;
+}
+
+.ns-hero-btn:hover .ns-btn-arrow-left {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.ns-hero-btn:hover .ns-btn-arrow-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 240px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* FRONT */
+.flip-card-front {
+  background: #f5f9ff;
+  border: 1px solid rgba(10, 61, 140, 0.1);
+}
+
+/* BACK */
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 61, 140, 0.8),
+    rgba(0, 185, 232, 0.3)
+  );
+}
+.card {
+  @apply relative rounded-2xl overflow-hidden bg-white border border-gray-200 transition-all duration-500;
+
+  height: 370px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-inner {
+    @apply relative h-full p-6 z-10;
+  }
+
+  /* TITLE */
+  h3 {
+    @apply text-[17px] font-semibold text-[#0A3D8C] mb-2 transition;
+  }
+
+  /* TEXT */
+  p {
+    @apply text-gray-600 text-[14px] leading-[1.7];
+  }
+
+  /* ICON (BLUE BG + WHITE ICON) */
+  .icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-xl mb-5 text-lg;
+
+    background: linear-gradient(135deg, #0A3D8C, #00B9E8);
+    color: white;
+    transition: all 0.4s ease;
+  }
+
+  /* IMAGE BIGGER */
+  .img-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+  }
+
+  /* DIAGONAL BLUE GRADIENT */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    background: linear-gradient(
+      to top right,
+      #0A3D8C,
+      #0c4fb0,
+      #00B9E8
+    );
+    clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  /* HOVER EFFECT */
+  &:hover::after {
+    height: 100%;
+    clip-path: none;
+  }
+
+  &:hover h3,
+  &:hover p {
+    color: white;
+  }
+
+  &:hover .icon {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:hover .img-box img {
+    transform: scale(1.05);
+  }
+
+  .img-box img {
+    transition: transform 0.5s ease;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    height: 350px;
+  }
+
+  .card .img-box img {
+    height: 120px;
+  }
+}
+.perf-card-glow:hover {
+  box-shadow: 0 20px 50px rgba(0, 185, 232, 0.25);
 }

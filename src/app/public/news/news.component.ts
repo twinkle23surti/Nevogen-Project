@@ -37,7 +37,7 @@ export class NewsComponent {
       title: 'New Solar Project in Gujarat',
       category: 'Projects',
       date: '2024-09-18',
-      image: '/assets/solar-pro.jpg',
+      image: '/assets/solar-infra1.jpeg',
       description:
         'Nevogen begins construction of a new solar plant in Gujarat.',
     },
@@ -55,7 +55,7 @@ export class NewsComponent {
       title: 'Nevogen Expands Rooftop Solar Program',
       category: 'Projects',
       date: '2024-11-05',
-      image: '/assets/solar-rooftop.jpg',
+      image: '/assets/solar rooftop.jpg',
       description:
         'The company launched a new rooftop solar initiative to support sustainable energy adoption.',
     },

@@ -20,10 +20,16 @@
 }
 
 /* Dark overlay for readability */
+/* Blue premium overlay — shifted to top */
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    to top,
+    rgba(10, 61, 140, 0.45) 0%,   /* light readable bottom */
+    rgba(10, 61, 140, 0.20) 45%,  /* soft mid */
+    rgba(0, 185, 232, 0.08) 100%  /* very light top */
+  );
   z-index: 1;
 }
 

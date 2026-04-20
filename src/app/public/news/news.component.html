@@ -29,11 +29,11 @@
       <!-- Left: Heading -->
       <div class="text-left max-w-2xl">
         <span
-          class="text-sm font-semibold text-[#31AF36] uppercase tracking-wider"
+          class="text-sm font-semibold text-secondary uppercase tracking-wider"
         >
           NEWS
         </span>
-        <h2 class="text-[32px] md:text-[40px] font-bold text-black mt-2">
+        <h2 class="text-[32px] md:text-[40px] font-bold text-primary mt-2">
           Explore Our Latest Stories
         </h2>
         <p class="text-gray-600 mt-3">
@@ -48,7 +48,7 @@
         <select
           [(ngModel)]="selectedCategory"
           (change)="filterNews()"
-          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[160px]"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-primary focus:outline-none focus:border-primary transition min-w-[160px]"
         >
           <option value="All">All Categories</option>
           <option value="Projects">Projects</option>
@@ -60,7 +60,7 @@
         <select
           [(ngModel)]="selectedYear"
           (change)="filterNews()"
-          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[140px]"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-primary focus:outline-none focus:border-primary transition min-w-[140px]"
         >
           <option value="All">All Years</option>
           <option value="2025">2025</option>
@@ -71,7 +71,7 @@
         <select
           [(ngModel)]="selectedMonth"
           (change)="filterNews()"
-          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-[#31AF36] focus:outline-none focus:border-[#31AF36] transition min-w-[160px]"
+          class="px-5 py-2 rounded-full border border-gray-300 text-sm bg-white text-gray-700 hover:border-primary focus:outline-none focus:border-primary transition min-w-[160px]"
         >
           <option value="All">All Months</option>
           <option value="1">January</option>
@@ -131,7 +131,7 @@
 
           <!-- READ MORE -->
           <button
-            class="mt-4 font-semibold text-[#2D394B] flex items-center gap-2 transition group-hover:gap-3 group-hover:text-[#31AF36]"
+            class="mt-4 font-semibold text-[#2D394B] flex items-center gap-2 transition group-hover:gap-3 group-hover:text-primary"
           >
             Read More →
           </button>
@@ -163,8 +163,8 @@
           (click)="goToPage(page)"
           class="px-4 py-2 border rounded-md text-sm transition"
           [ngClass]="{
-            'bg-[#31AF36] text-white border-[#31AF36]': currentPage === page,
-            'bg-white text-gray-700 hover:border-[#31AF36]':
+            'bg-primary text-white border-primary': currentPage === page,
+            'bg-white text-gray-700 hover:border-primary':
               currentPage !== page,
           }"
         >

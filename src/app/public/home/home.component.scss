@@ -136,3 +136,116 @@
 .group:hover .spin-ring {
   animation-play-state: running;
 }
+.card {
+  @apply relative rounded-2xl overflow-hidden bg-white border border-gray-200 transition-all duration-500;
+  height: 340px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.card-inner {
+  @apply relative h-full p-6 z-10;
+}
+
+/* TITLE */
+.card h3 {
+  @apply text-[17px] font-semibold text-[#0A3D8C] mb-2 transition;
+}
+
+/* TEXT */
+.card p {
+  @apply text-gray-600 text-[14px] leading-[1.7];
+}
+
+/* ICON */
+.card .icon {
+  @apply w-12 h-12 flex items-center justify-center rounded-xl mb-5;
+  background: linear-gradient(135deg, #0A3D8C, #00B9E8);
+  transition: all 0.4s ease;
+}
+
+/* IMAGE */
+.card .img-box {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card .img-box img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+/* GRADIENT OVERLAY */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to top right, #0A3D8C, #00B9E8);
+  clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0% 100%);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* HOVER */
+.card:hover::after {
+  height: 100%;
+  clip-path: none;
+}
+
+.card:hover h3,
+.card:hover p {
+  color: white;
+}
+
+.card:hover .icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card:hover .img-box img {
+  transform: scale(1.05);
+}
+/* 3 Info Cards — same diagonal hover design */
+.card h4 { @apply text-[15px] font-bold text-[#0A3D8C] mb-1 transition; }
+.card p  { @apply text-[12px] text-gray-600 mb-2 transition; }
+.card ul { @apply text-[11px] text-gray-700 space-y-1 mb-2 list-none; }
+.card ul li { transition: color 0.4s ease; }
+
+.badge {
+  @apply inline-block text-[10px] font-semibold text-cyan-600 px-2 py-0.5 rounded-full;
+  background: rgba(0,185,232,0.1);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.card:hover h4,
+.card:hover p,
+.card:hover ul li { color: white; }
+
+.card:hover .badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.card .icon {
+  @apply w-12 h-12 rounded-xl mb-4 overflow-hidden flex-shrink-0;
+  background: linear-gradient(135deg, #0A3D8C, #00B9E8);
+  transition: background 0.4s ease;
+  padding: 8px;
+}
+
+.card:hover .icon {
+  background: rgba(255,255,255,0.2);
+}
