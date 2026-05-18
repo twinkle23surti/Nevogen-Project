@@ -136,6 +136,9 @@
 .group:hover .spin-ring {
   animation-play-state: running;
 }
+
+//trust cards
+
 .card {
   @apply relative rounded-2xl overflow-hidden bg-white border border-gray-200 transition-all duration-500;
   height: 340px;
@@ -148,6 +151,7 @@
 
 .card-inner {
   @apply relative h-full p-6 z-10;
+  padding-bottom: 120px;
 }
 
 /* TITLE */
@@ -170,10 +174,10 @@
 /* IMAGE */
 .card .img-box {
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
+  width: 80%;
   border-radius: 14px;
   overflow: hidden;
   z-index: 2;
@@ -181,7 +185,7 @@
 
 .card .img-box img {
   width: 100%;
-  height: 130px;
+  height: 110px;
   object-fit: contain;
   transition: transform 0.5s ease;
 }
@@ -219,9 +223,17 @@
   transform: scale(1.05);
 }
 /* 3 Info Cards — same diagonal hover design */
-.card h4 { @apply text-[15px] font-bold text-[#0A3D8C] mb-1 transition; }
-.card p  { @apply text-[12px] text-gray-600 mb-2 transition; }
-.card ul { @apply text-[11px] text-gray-700 space-y-1 mb-2 list-none; }
+.card h4 {
+  @apply text-[15px] font-bold text-[#0A3D8C] mb-2;
+}
+
+.card p {
+  @apply text-[12px] text-gray-600 mb-3 leading-[1.6];
+}
+
+.card ul {
+  @apply text-[11px] text-gray-700 space-y-1 mb-3;
+}
 .card ul li { transition: color 0.4s ease; }
 
 .badge {

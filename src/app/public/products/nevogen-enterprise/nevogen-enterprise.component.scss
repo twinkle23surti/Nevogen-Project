@@ -167,9 +167,10 @@
 .flip-back {
   transform: rotateY(180deg);
 }
+
 //card diagonal
 .card {
-  @apply relative rounded-2xl overflow-hidden bg-white border border-gray-200 transition-all duration-500;
+  @apply relative rounded-2xl  bg-white border border-gray-200 transition-all duration-500;
 
   height: 380px;
 
@@ -200,23 +201,29 @@
   }
 
   /* IMAGE */
-  .img-box {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    border-radius: 14px;
-    overflow: hidden;
-    z-index: 2;
+.img-box {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+  width: 100%;
+  height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
   }
+}
 
   /* DIAGONAL GRADIENT */
   &::after {
@@ -252,9 +259,9 @@
     background: rgba(255, 255, 255, 0.2);
   }
 
-  &:hover .img-box img {
-    transform: scale(1.06);
-  }
+&:hover .img-box img {
+  transform: scale(1.03);
+}
 }
 
 /* RESPONSIVE */
