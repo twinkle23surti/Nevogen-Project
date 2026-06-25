@@ -105,19 +105,19 @@ testimonials = [
   {
     name: 'Amit Verma',
     role: 'Industrial Client',
-    img: 'assets/user1.jpg',
+    img: 'assets/user 1.jpg',
     text: 'Nevogen delivered a seamless solar energy solution with strong technical execution. We are already seeing reduced energy costs and improved efficiency.'
   },
   {
     name: 'Neha Kapoor',
     role: 'Business Owner',
-    img: 'assets/user2.jpg',
+    img: 'assets/user 2.jpg',
     text: 'Highly professional team with clear planning and reliable solar deployment. Their support ensures consistent performance for our business.'
   },
   {
     name: 'Rohit Jain',
     role: 'Factory Owner',
-    img: 'assets/user3.jpg',
+    img: 'assets/user 3.jpg',
     text: 'A dependable solar energy partner with excellent execution quality. The system performance and long-term reliability have been impressive.'
   }
 ];
